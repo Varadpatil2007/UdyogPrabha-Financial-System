@@ -1,0 +1,104 @@
+/* Fade-in animation */
+.header {
+    background: #004080;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    position: relative;
+  }
+  
+  .logo {
+    height: 50px;
+    animation: slideInLeft 1s ease-out;
+  }
+  
+  .logo1 {
+    height: 150px;
+    animation: slideInLeft 1s ease-out;
+  }
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+  
+  .nav-toggle div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+  }
+  
+  .nav {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: #fff;
+    transition: width 0.3s;
+  }
+  
+  .nav a:hover::after {
+    width: 100%;
+  }
+
+  
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Shared input styles */
+  .input {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .input:focus {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4);
+    border-color: #3b82f6;
+  }
+  
+  /* Button styling */
+  .submit-btn {
+    width: 100%;
+    background-color: #2563eb;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .submit-btn:hover {
+    background-color: #1d4ed8;
+  }
+  

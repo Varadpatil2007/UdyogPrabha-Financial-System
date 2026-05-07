@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simple Interest Calculator | Calculate Interest & Total Amount Easily | UdyogPrabha</title>
+  <meta name="description" content="Use UdyogPrabha’s Simple Interest Calculator to quickly calculate simple interest and total amount on your principal. Easy-to-use tool for loans, investments, and financial planning.">
+  <meta name="keywords" content="simple interest calculator, calculate simple interest, simple interest formula, interest rate calculator, loan interest calculator, investment interest calculator, financial planning tool, principal interest calculator, online interest calculator, UdyogPrabha simple interest calculator">
+  <meta name="robots" content="index, follow">
+  <script src="https://cdn.tailwindcss.com"></script>
+ <!-- Swiper CSS & JS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+  <style>
+    @keyframes marquee {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    .animate-marquee {
+      display: inline-block;
+      animation: marquee 20s linear infinite;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+ <!-- Top Strip (Hidden on small screens, shown on md and up) -->
+<div class="hidden md:flex bg-blue-900 text-white text-sm py-2 px-4 justify-between items-center">
+  <span>Ministry of MSME Supported | Call us: +91 9876543210</span>
+  <span>udyogprabha@email.com</span>
+</div>
+
+
+  <!-- Logo + Nav -->
+  <header class="bg-white shadow-md px-4 py-3 flex justify-between items-center">
+    <div class="flex items-center gap-3">
+      <img src="udyog.jpg" alt="Logo" class="h-12 w-12 object-cover rounded" />
+      <h1 class="text-xl font-bold text-blue-800">UDYOG PRABHA</h1>
+    </div>
+    <nav class="hidden md:flex gap-6 font-semibold text-sm text-gray-700">
+      <a href="index.html" class="hover:text-blue-600">Home</a>
+      <a href="about.html" class="hover:text-blue-600">About</a>
+      <a href="service.html" class="hover:text-blue-600">Services</a>
+      <a href="tools.html" class="hover:text-blue-600">Tools</a>
+      <a href="contact.html" class="hover:text-blue-600">Contact</a>
+      <a href="login.html" class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">Login</a>
+    </nav>
+<!-- Hamburger Button -->
+  
+  </header>
+
+  
+
+  <!-- Notice Bar with MENU -->
+  <div class="flex items-center bg-[#0a6bbf] text-white w-full shadow-md overflow-hidden relative">
+    <!-- Left Label -->
+    <div class="bg-[#23a5f2] px-6 py-3 relative flex items-center justify-center shrink-0">
+      <span class="relative z-10 font-semibold text-lg">Notice</span>
+      <div class="absolute top-0 right-0 w-0 h-0 border-t-[48px] border-t-transparent border-l-[25px] border-l-[#0a6bbf] border-b-[48px] border-b-transparent"></div>
+    </div>
+
+    <!-- Scrolling Text -->
+    <div class="flex-1 px-4 py-3 text-sm md:text-base italic whitespace-nowrap overflow-hidden">
+      <div class="animate-marquee inline-block">
+        CMEGP modified Guidelines implemented from 11-November • Subsidy revised • Digital verification mandatory •
+      </div>
+    </div>
+
+    <!-- MENU Button -->
+    <button onclick="toggleSidebar()" class="bg-white text-[#0a6bbf] font-semibold px-4 py-2 rounded shadow-md mr-4 flex items-center gap-2 hover:bg-gray-100 transition">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      MENU
+    </button>
+  </div>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="fixed top-0 right-0 h-full w-72 bg-white shadow-lg z-50 transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto">
+    <div class="p-4 border-b flex justify-between items-center sticky top-0 bg-white z-10">
+      <h2 class="text-lg font-bold text-blue-700">Quick Access</h2>
+      <button onclick="toggleSidebar()" class="text-gray-600 hover:text-red-500 text-2xl">&times;</button>
+    </div>
+    <ul class="divide-y divide-gray-200 text-sm font-medium">
+      <li><a href="index.html" class="block px-4 py-3 hover:bg-blue-50">Home</a></li>
+      <li><a href="about.html" class="block px-4 py-3 hover:bg-blue-50">About Us</a></li>
+      <li><a href="blog.html" class="block px-4 py-3 hover:bg-blue-50">Blog</a></li>
+      <li><a href="service.html" class="block px-4 py-3 hover:bg-blue-50">Service</a></li>
+      <li><a href="dashboard.html" class="block px-4 py-3 hover:bg-blue-50">Dashboard</a></li>
+      <li><a href="cmegpdash.html" class="block px-4 py-3 hover:bg-blue-50">CMEGP Dashboard</a></li>
+      <li><a href="videos.html" class="block px-4 py-3 hover:bg-blue-50">Video Tutorial</a></li>
+      <li><a href="ProjectReport (1).xls" download class="block px-4 py-3 hover:bg-blue-50">Sample Project Report</a></li>
+      <li><a href="faq.html" class="block px-4 py-3 hover:bg-blue-50">Frequently Asked Questions</a></li>
+      <li><a href="contacts.html" class="block px-4 py-3 hover:bg-blue-50">Contact List</a></li>
+      <li><a href="schemecircular.pdf" download class="block px-4 py-3 hover:bg-blue-50">Scheme Circular</a></li>
+      <li><a href="cmegpGuidelines.pdf" download="" class="block px-4 py-3 hover:bg-blue-50">Scheme Guidelines</a></li>
+      <li><a href="cmegpGR.pdf" download class="block px-4 py-3 hover:bg-blue-50">GR</a></li>
+      <li><a href="cmegp-UNDERTAKING (MAHARASHTRA).pdf" download class="block px-4 py-3 hover:bg-blue-50">Download CMEGP Undertaking form</a></li>
+    </ul>
+  </div>
+
+  <!-- Overlay -->
+  <div id="overlay" onclick="toggleSidebar()" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+<!-- Interest Calculator Section -->
+<section class="bg-gray-100 py-10 px-4 md:px-12">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+    
+    <!-- Left Form Section -->
+    <div class="bg-white p-6 rounded-lg shadow-md space-y-6">
+      <div>
+        <label class="font-semibold">My <span class="text-red-600 font-bold">principal amount</span> is</label>
+        <input id="principalInput" type="number" value="100000" min="10000" max="10000000"
+               class="w-full mt-2 border-b-2 border-gray-400 text-xl p-2 outline-none" />
+        <input type="range" id="principalRange" min="10000" max="10000000" step="1000" value="100000"
+               class="w-full mt-2" />
+        <div class="text-sm text-gray-500 mt-1">Range: ₹10K - ₹1Cr</div>
+      </div>
+
+      <div>
+        <label class="font-semibold">I'm looking at an <span class="text-red-600 font-bold">interest rate</span> of</label>
+        <input id="rateInput" type="number" value="6" min="1" max="20"
+               class="w-full mt-2 border-b-2 border-gray-400 text-xl p-2 outline-none" />
+        <input type="range" id="rateRange" min="1" max="20" value="6"
+               class="w-full mt-2" />
+        <div class="text-sm text-gray-500 mt-1">Range: 1% - 20%</div>
+      </div>
+
+      <div>
+        <label class="font-semibold">I plan to calculate interest for a period of</label>
+        <div class="flex items-center gap-2 mt-2">
+          <input id="durationInput" type="number" value="12" min="1" max="60"
+                 class="w-full border-b-2 border-gray-400 text-xl p-2 outline-none" />
+          <select id="durationType" class="border border-gray-400 rounded px-3 py-2">
+            <option value="months">Months</option>
+            <option value="years">Years</option>
+          </select>
+        </div>
+        <input type="range" id="durationRange" min="1" max="60" value="12"
+               class="w-full mt-2" />
+        <div class="text-sm text-gray-500 mt-1">Range: 1 - 60 (Months or Years)</div>
+      </div>
+    </div>
+
+    <!-- Right Result Section -->
+    <div class="bg-white p-6 rounded-lg shadow-md">
+      <div class="bg-red-600 text-white p-6 rounded-lg mb-6">
+        <h3 class="text-lg font-semibold">Total Amount gained:</h3>
+        <p class="text-4xl font-bold mt-2" id="totalAmount">₹1,06,000</p>
+        <p class="mt-1" id="summaryText">at 6% interest rate for 1 year</p>
+      </div>
+      <div class="space-y-4 text-lg text-gray-800">
+        <p><strong>Principal:</strong> <span id="principalText">₹1,00,000</span></p>
+        <p><strong>Interest gained:</strong> <span id="interestText">₹6,000</span></p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const principalInput = document.getElementById("principalInput");
+  const principalRange = document.getElementById("principalRange");
+  const rateInput = document.getElementById("rateInput");
+  const rateRange = document.getElementById("rateRange");
+  const durationInput = document.getElementById("durationInput");
+  const durationRange = document.getElementById("durationRange");
+  const durationType = document.getElementById("durationType");
+
+  const totalAmountEl = document.getElementById("totalAmount");
+  const interestText = document.getElementById("interestText");
+  const principalText = document.getElementById("principalText");
+  const summaryText = document.getElementById("summaryText");
+
+  function formatCurrency(value) {
+    return "₹" + Number(value).toLocaleString("en-IN");
+  }
+
+  function calculateInterest() {
+    let principal = parseFloat(principalInput.value);
+    let rate = parseFloat(rateInput.value);
+    let duration = parseFloat(durationInput.value);
+    let type = durationType.value;
+
+    let years = type === "months" ? duration / 12 : duration;
+
+    let interest = (principal * rate * years) / 100;
+    let total = principal + interest;
+
+    totalAmountEl.textContent = formatCurrency(total);
+    principalText.textContent = formatCurrency(principal);
+    interestText.textContent = formatCurrency(interest);
+    summaryText.textContent = `at ${rate}% interest rate for ${duration} ${type}`;
+  }
+
+  // Sync Sliders & Inputs
+  function sync(input, range) {
+    input.addEventListener("input", () => {
+      range.value = input.value;
+      calculateInterest();
+    });
+    range.addEventListener("input", () => {
+      input.value = range.value;
+      calculateInterest();
+    });
+  }
+
+  sync(principalInput, principalRange);
+  sync(rateInput, rateRange);
+  sync(durationInput, durationRange);
+
+  durationType.addEventListener("change", calculateInterest);
+
+  calculateInterest(); // initial calculation
+</script>
+
+<section class="bg-white py-16 px-4 md:px-10 text-gray-800">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold text-blue-900 mb-6">What is Simple Interest (A = P(1 + rt))?</h2>
+    
+    <p class="mb-4">
+      Simple interest is the cost of borrowing money or the return on investment over a fixed period. It is calculated on the original principal only.
+    </p>
+    
+    <p class="mb-4">
+      Whenever someone borrows money (called the <strong>principal amount</strong>), they repay it with an additional amount known as interest over time.
+    </p>
+
+    <div class="bg-gray-100 p-6 rounded-lg shadow-sm mb-6">
+      <h3 class="text-xl font-semibold mb-2">📘 Simple Interest Formula</h3>
+      <p><strong>A = P(1 + rt)</strong></p>
+      <ul class="list-disc pl-6 mt-2 text-gray-700">
+        <li><strong>A</strong>: Total Amount (Principal + Interest)</li>
+        <li><strong>P</strong>: Principal amount</li>
+        <li><strong>r</strong>: Annual interest rate (in decimal form, r = R/100)</li>
+        <li><strong>t</strong>: Time period in years</li>
+      </ul>
+    </div>
+
+    <div class="mb-6">
+      <h3 class="text-xl font-semibold text-blue-900 mb-2">🔧 What Is a Simple Interest Calculator?</h3>
+      <p class="mb-2">
+        A simple interest calculator is an online tool that helps you compute interest and total amount quickly. Input the required values and the calculator applies the formula automatically.
+      </p>
+      <p class="text-gray-700">
+        It provides accurate, fast, and useful insights for planning loans, savings, or investments.
+      </p>
+    </div>
+
+    <div class="mb-6">
+      <h3 class="text-xl font-semibold text-blue-900 mb-2">⚙️ How Does It Work?</h3>
+      <p class="mb-2">To use the calculator, enter:</p>
+      <ul class="list-disc pl-6 text-gray-700">
+        <li><strong>Principal (P):</strong> Initial investment or loan amount</li>
+        <li><strong>Interest Rate (r):</strong> Annual rate in percentage</li>
+        <li><strong>Time (t):</strong> Duration of investment/loan in years</li>
+      </ul>
+      <p class="mt-2">It then calculates:</p>
+      <ul class="list-disc pl-6 text-gray-700">
+        <li><strong>Total Interest Earned</strong></li>
+        <li><strong>Total Amount (A)</strong>: Principal + Interest</li>
+      </ul>
+    </div>
+
+    <div class="bg-blue-50 border-l-4 border-blue-900 p-4 rounded mb-6">
+      <h4 class="font-semibold">📊 Example:</h4>
+      <p class="mt-1">P = ₹10,000, r = 10%, t = 6 years</p>
+      <p class="mt-1"><strong>A = 10,000 × (1 + 0.1 × 6) = ₹16,000</strong></p>
+      <p class="mt-1">Interest = ₹6,000</p>
+    </div>
+
+    <div class="mb-6">
+      <h3 class="text-xl font-semibold text-blue-900 mb-2">✅ Benefits of Using a Simple Interest Calculator</h3>
+      <ul class="list-disc pl-6 text-gray-700">
+        <li>🎯 <strong>Convenience:</strong> Easy to use for everyone</li>
+        <li>⚡ <strong>Quick & Accurate:</strong> Instant results with reliable calculations</li>
+        <li>📈 <strong>Compare Schemes:</strong> Evaluate various investment/loan options</li>
+        <li>📅 <strong>Financial Planning:</strong> Understand future returns or obligations clearly</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+   <!-- Footer -->
+  <footer class="bg-blue-900 text-white text-sm py-4 text-center">
+    &copy; 2025 UDYOG PRABHA. All Rights Reserved.
+  </footer>
+
+  <!-- Sidebar Toggle Script -->
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('translate-x-full');
+      document.getElementById('overlay').classList.toggle('hidden');
+    }
+  </script>
+
+<!-- Popup Banner Overlay with Image -->
+<div id="popupBanner" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
+  <div class="bg-white rounded-lg shadow-lg max-w-md w-full p-4 text-center relative">
+    
+    <!-- ❌ Close Button -->
+    <button onclick="closePopup()" class="absolute top-2 right-3 text-gray-500 hover:text-red-600 text-2xl">&times;</button>
+
+    <!-- 📸 Banner Image -->
+    <img src="pmegpbanner.jpg" alt="CIBIL Score Coming Soon"
+         class="w-full h-40 object-cover rounded-md mb-4" />
+
+    <!-- 📝 Text Content -->
+    <h2 class="text-xl font-bold text-blue-800 mb-2">🚀 New Service Alert!</h2>
+    <p class="text-gray-700 mb-4">We are launching our Live CIBIL Score Checker on UDYOG PRABHA. Be the first to try it!</p>
+
+    <!-- 🔗 CTA Button -->
+    <a href="cibil.html"
+       class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded shadow inline-block">
+      Learn More
+    </a>
+  </div>
+</div>
+
+<!-- 📜 Script to Close Popup -->
+<script>
+  function closePopup() {
+    document.getElementById("popupBanner").style.display = "none";
+  }
+
+  // Optional: Auto-close after 10s
+  // setTimeout(() => { closePopup(); }, 10000);
+</script>
+<!-- 📜 Smart Popup Control Script -->
+<script>
+  const popupKey = "udyogPrabhaPopupShown";
+  const today = new Date().toDateString();
+
+  if (sessionStorage.getItem(popupKey) !== today) {
+    document.getElementById("popupBanner").style.display = "flex";
+    sessionStorage.setItem(popupKey, today);
+  } else {
+    document.getElementById("popupBanner").style.display = "none";
+  }
+
+  function closePopup() {
+    document.getElementById("popupBanner").style.display = "none";
+  }
+</script>
+
+<!-- ✅ Theme-Matching WhatsApp Floating Chat Widget -->
+<div id="whatsapp-chat" class="fixed bottom-5 right-5 z-50">
+
+  <!-- 💬 Toggle Button -->
+  <button onclick="toggleWhatsApp()" 
+    class="bg-[#0076b8] hover:bg-[#005f99] text-white rounded-full p-4 shadow-lg focus:outline-none transition">
+    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 32 32">
+      <path d="M19.11 17.52c-.29-.14-1.7-.84-1.96-.94-.26-.1-.45-.14-.64.15s-.73.93-.9 1.12c-.16.18-.33.2-.62.07-.29-.14-1.22-.45-2.32-1.43-.86-.76-1.44-1.69-1.6-1.98s-.02-.44.12-.58c.13-.13.29-.33.44-.5.14-.17.18-.29.26-.48.09-.18.04-.36-.02-.5-.07-.14-.64-1.55-.88-2.13-.23-.56-.47-.48-.64-.49h-.55c-.18 0-.48.07-.73.36-.26.29-1 1-1 2.44s1.02 2.83 1.17 3.03c.14.2 2 3.06 4.85 4.29 2.85 1.23 2.85.82 3.36.77.5-.05 1.7-.7 1.94-1.38.24-.68.24-1.26.17-1.38-.07-.11-.26-.18-.55-.32zM16 3C9.37 3 4 8.37 4 15c0 2.63.85 5.05 2.28 7.02L4 29l7.26-2.28C13.01 28.15 14.47 28.5 16 28.5c6.63 0 12-5.37 12-12S22.63 3 16 3z"></path>
+    </svg>
+  </button>
+
+  <!-- 🧾 Chat Box -->
+  <div id="whatsapp-box" class="hidden mt-3 w-72 bg-white border border-blue-200 rounded-lg shadow-lg overflow-hidden">
+    <div class="bg-[#0a6bbf] text-white px-4 py-2 font-semibold">UDYOG PRABHA Support</div>
+    <div class="p-4 text-sm text-gray-700">
+      <p class="mb-3">👋 Hi there! Need help with GST, loans, or tax filing?</p>
+      <a href="https://wa.me/919876543210?text=Hello%20Udyog%20Prabha%20Team!%20I%20need%20assistance%20with..."
+         target="_blank"
+         class="block text-center bg-[#0076b8] hover:bg-[#005f99] text-white font-semibold py-2 rounded transition">
+        Start WhatsApp Chat
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- 💬 Toggle Script -->
+<script>
+  function toggleWhatsApp() {
+    const box = document.getElementById("whatsapp-box");
+    box.classList.toggle("hidden");
+  }
+</script>
+
+<script>
+  const swiper = new Swiper(".mySwiper", {
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    }
+  });
+</script>
+
+
+
+</body>
+</html>

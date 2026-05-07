@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UDYOG PRABHA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes marquee {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    .animate-marquee {
+      display: inline-block;
+      animation: marquee 23s linear infinite;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+ <!-- Top Strip (Hidden on small screens, shown on md and up) -->
+<div class="hidden md:flex bg-blue-900 text-white text-sm py-2 px-4 justify-between items-center">
+  <span>Ministry of MSME Supported | Call us: +91 9876543210</span>
+  <span>udyogprabha@email.com</span>
+</div>
+
+
+  <!-- Logo + Nav -->
+  <header class="bg-white shadow-md px-4 py-3 flex justify-between items-center">
+    <div class="flex items-center gap-3">
+      <img src="udyog.jpg" alt="Logo" class="h-12 w-12 object-cover rounded" />
+      <h1 class="text-xl font-bold text-blue-800">UDYOG PRABHA</h1>
+    </div>
+    <nav class="hidden md:flex gap-6 font-semibold text-sm text-gray-700">
+      <a href="index.html" class="hover:text-blue-600">Home</a>
+      <a href="about.html" class="hover:text-blue-600">About</a>
+      <a href="service.html" class="hover:text-blue-600">Services</a>
+      <a href="blog.html" class="hover:text-blue-600">Blog</a>
+      <a href="contact.html" class="hover:text-blue-600">Contact</a>
+      <a href="login.html" class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">Login</a>
+    </nav>
+<!-- Hamburger Button -->
+  
+  </header>
+
+  
+
+  <!-- Notice Bar with MENU -->
+  <div class="flex items-center bg-[#0a6bbf] text-white w-full shadow-md overflow-hidden relative">
+    <!-- Left Label -->
+    <div class="bg-[#23a5f2] px-6 py-3 relative flex items-center justify-center shrink-0">
+      <span class="relative z-10 font-semibold text-lg">Notice</span>
+      <div class="absolute top-0 right-0 w-0 h-0 border-t-[48px] border-t-transparent border-l-[25px] border-l-[#0a6bbf] border-b-[48px] border-b-transparent"></div>
+    </div>
+
+    <!-- Scrolling Text -->
+    <div class="flex-1 px-4 py-3 text-sm md:text-base italic whitespace-nowrap overflow-hidden">
+      <div class="animate-marquee inline-block">
+        📢 Important Notice for Home Loan Applicants ||  Please ensure that all required documents are complete and up-to-date before submitting your home loan application.
+        Incomplete or incorrect documentation may result in delays or rejection.
+      </div>
+    </div>
+
+    <!-- MENU Button -->
+    <button onclick="toggleSidebar()" class="bg-white text-[#0a6bbf] font-semibold px-4 py-2 rounded shadow-md mr-4 flex items-center gap-2 hover:bg-gray-100 transition">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      MENU
+    </button>
+  </div>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="fixed top-0 right-0 h-full w-72 bg-white shadow-lg z-50 transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto">
+    <div class="p-4 border-b flex justify-between items-center sticky top-0 bg-white z-10">
+      <h2 class="text-lg font-bold text-blue-700">Quick Access</h2>
+      <button onclick="toggleSidebar()" class="text-gray-600 hover:text-red-500 text-2xl">&times;</button>
+    </div>
+    <ul class="divide-y divide-gray-200 text-sm font-medium">
+      <li><a href="index.html" class="block px-4 py-3 hover:bg-blue-50">Home</a></li>
+      <li><a href="about.html" class="block px-4 py-3 hover:bg-blue-50">About Us</a></li>
+      <li><a href="blog.html" class="block px-4 py-3 hover:bg-blue-50">Blog</a></li>
+      <li><a href="service.html" class="block px-4 py-3 hover:bg-blue-50">Service</a></li>
+      <li><a href="dashboard.html" class="block px-4 py-3 hover:bg-blue-50">Dashboard</a></li>
+      <li><a href="cmegpdash.html" class="block px-4 py-3 hover:bg-blue-50">CMEGP Dashboard</a></li>
+      <li><a href="videos.html" class="block px-4 py-3 hover:bg-blue-50">Video Tutorial</a></li>
+      <li><a href="ProjectReport (1).xls" download class="block px-4 py-3 hover:bg-blue-50">Sample Project Report</a></li>
+      <li><a href="faq.html" class="block px-4 py-3 hover:bg-blue-50">Frequently Asked Questions</a></li>
+      <li><a href="contacts.html" class="block px-4 py-3 hover:bg-blue-50">Contact List</a></li>
+      <li><a href="schemecircular.pdf" download class="block px-4 py-3 hover:bg-blue-50">Scheme Circular</a></li>
+      <li><a href="cmegpGuidelines.pdf" download="" class="block px-4 py-3 hover:bg-blue-50">Scheme Guidelines</a></li>
+      <li><a href="cmegpGR.pdf" download class="block px-4 py-3 hover:bg-blue-50">GR</a></li>
+      <li><a href="cmegp-UNDERTAKING (MAHARASHTRA).pdf" download class="block px-4 py-3 hover:bg-blue-50">Download CMEGP Undertaking form</a></li>
+    </ul>
+  </div>
+
+  <!-- Overlay -->
+  <div id="overlay" onclick="toggleSidebar()" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+
+  <section class="relative max-w-6xl mx-auto mt-5 px-4">
+  <div class="rounded-lg shadow-lg overflow-hidden">
+    <img src="https://www.bankofbarodaoman.com/-/media/project/bob/countrywebsites/oman/business/business-loan-sme-corporate-loan/images/business-loan-sme-corporate-loan-spotlight.jpg?h=400&iar=0&w=1080&hash=C01769BA23DE7C45E48ABDEB98F55F31" class="w-full object-contain" />
+  </div>
+</section>
+
+<!-- loan Section -->
+<section class="bg-gradient-to-b from-blue-100 to-blue-50 py-10 text-center">
+  <h2 class="text-3xl font-bold text-blue-900 mb-8">Apply Loan Now</h2>
+  <div class="flex flex-wrap justify-center gap-6 px-4">
+    <a href="applicationbuisnessloan.html" class="bg-[#0076b8] text-white px-6 py-4 rounded-full shadow hover:bg-[#005f99] transition w-72 text-center font-medium">
+        Application For<br>Buisness Loan
+    </a>
+  </div>
+</section>
+
+<section class="bg-white py-12 px-4 md:px-8 lg:px-16">
+  <div class="text-center mb-12">
+    <h4 class="text-gray-600 text-md md:text-lg">We Innovate So You Can Benefit</h4>
+    <h2 class="text-2xl md:text-3xl font-bold text-blue-800">
+      Easy Loans, EMI Automation, and Hassle-Free Property Search
+    </h2>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+    <!-- Customer Portal -->
+    <div class="bg-gray-100 rounded-2xl overflow-hidden shadow-sm flex flex-col">
+      <div class="p-6 flex-1 flex flex-col">
+        <h3 class="text-xl font-bold text-blue-800 mb-2">Customer Portal</h3>
+        <p class="text-gray-700 text-sm mb-4">
+          We simplify your loan management with easy, instant access through our customer portal.
+        </p>
+        <a href="#" class="inline-block bg-blue-800 text-white font-semibold px-6 py-2 rounded-full text-sm mb-4">
+          Log in Now to get Started
+        </a>
+      </div>
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSySlCPh-BG8Bfw_Gf7DOAhvYLT4JXottGdCQ&s" alt="Customer Portal" class="w-full object-cover">
+    </div>
+
+    <!-- eNACH Service -->
+    <div class="bg-gray-100 rounded-2xl overflow-hidden shadow-sm flex flex-col">
+      <img src="https://cdn.lichousing.com/2025/06/3422a596-enach_service.jpg" alt="eNACH" class="w-full h-48 object-cover">
+      <div class="p-6 flex-1 flex flex-col">
+        <h3 class="text-xl font-bold text-blue-800 mb-2">eNACH Service</h3>
+        <p class="text-gray-700 text-sm mb-4">
+          We handle your EMI payments automatically, so you don’t have to worry about them.
+        </p>
+        <a href="#" class="inline-block bg-blue-800 text-white font-semibold px-6 py-2 rounded-full text-sm mt-auto">
+          Set Up Auto-Debit Now
+        </a>
+      </div>
+    </div>
+
+    <!-- Realty Assist -->
+    <div class="bg-gray-100 rounded-2xl overflow-hidden shadow-sm flex flex-col">
+      <div class="p-6 flex-1 flex flex-col">
+        <h3 class="text-xl font-bold text-blue-800 mb-2">Realty Assist</h3>
+        <p class="text-gray-700 text-sm mb-4">
+          We streamline your property search. Discover your ideal property anywhere in India with ease.
+        </p>
+        <a href="#" class="inline-block bg-blue-800 text-white font-semibold px-6 py-2 rounded-full text-sm mb-4">
+          Discover your Next Home
+        </a>
+      </div>
+      <img src="https://cdn.lichousing.com/2025/01/realty_assist.jpg" alt="Realty Assist" class="w-full object-cover">
+    </div>
+
+  </div>
+</section>
+
+<!-- Footer -->
+  <footer class="bg-blue-900 text-white text-sm py-4 text-center">
+    &copy; 2025 UDYOG PRABHA. All Rights Reserved.
+  </footer>
+
+  <!-- Sidebar Toggle Script -->
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('translate-x-full');
+      document.getElementById('overlay').classList.toggle('hidden');
+    }
+  </script>
+
+<!-- Popup Banner Overlay with Image -->
+<div id="popupBanner" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
+  <div class="bg-white rounded-lg shadow-lg max-w-md w-full p-4 text-center relative">
+    
+    <!-- ❌ Close Button -->
+    <button onclick="closePopup()" class="absolute top-2 right-3 text-gray-500 hover:text-red-600 text-2xl">&times;</button>
+
+    <!-- 📸 Banner Image -->
+    <img src="pmegpbanner.jpg" alt="CIBIL Score Coming Soon"
+         class="w-full h-40 object-cover rounded-md mb-4" />
+
+    <!-- 📝 Text Content -->
+    <h2 class="text-xl font-bold text-blue-800 mb-2">🚀 New Service Alert!</h2>
+    <p class="text-gray-700 mb-4">We are launching our Live CIBIL Score Checker on UDYOG PRABHA. Be the first to try it!</p>
+
+    <!-- 🔗 CTA Button -->
+    <a href="cibil.html"
+       class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded shadow inline-block">
+      Learn More
+    </a>
+  </div>
+</div>
+
+<!-- 📜 Script to Close Popup -->
+<script>
+  function closePopup() {
+    document.getElementById("popupBanner").style.display = "none";
+  }
+
+  // Optional: Auto-close after 10s
+  // setTimeout(() => { closePopup(); }, 10000);
+</script>
+<!-- 📜 Smart Popup Control Script -->
+<script>
+  const popupKey = "udyogPrabhaPopupShown";
+  const today = new Date().toDateString();
+
+  if (sessionStorage.getItem(popupKey) !== today) {
+    document.getElementById("popupBanner").style.display = "flex";
+    sessionStorage.setItem(popupKey, today);
+  } else {
+    document.getElementById("popupBanner").style.display = "none";
+  }
+
+  function closePopup() {
+    document.getElementById("popupBanner").style.display = "none";
+  }
+</script>
+
+<!-- ✅ Theme-Matching WhatsApp Floating Chat Widget -->
+<div id="whatsapp-chat" class="fixed bottom-5 right-5 z-50">
+
+  <!-- 💬 Toggle Button -->
+  <button onclick="toggleWhatsApp()" 
+    class="bg-[#0076b8] hover:bg-[#005f99] text-white rounded-full p-4 shadow-lg focus:outline-none transition">
+    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 32 32">
+      <path d="M19.11 17.52c-.29-.14-1.7-.84-1.96-.94-.26-.1-.45-.14-.64.15s-.73.93-.9 1.12c-.16.18-.33.2-.62.07-.29-.14-1.22-.45-2.32-1.43-.86-.76-1.44-1.69-1.6-1.98s-.02-.44.12-.58c.13-.13.29-.33.44-.5.14-.17.18-.29.26-.48.09-.18.04-.36-.02-.5-.07-.14-.64-1.55-.88-2.13-.23-.56-.47-.48-.64-.49h-.55c-.18 0-.48.07-.73.36-.26.29-1 1-1 2.44s1.02 2.83 1.17 3.03c.14.2 2 3.06 4.85 4.29 2.85 1.23 2.85.82 3.36.77.5-.05 1.7-.7 1.94-1.38.24-.68.24-1.26.17-1.38-.07-.11-.26-.18-.55-.32zM16 3C9.37 3 4 8.37 4 15c0 2.63.85 5.05 2.28 7.02L4 29l7.26-2.28C13.01 28.15 14.47 28.5 16 28.5c6.63 0 12-5.37 12-12S22.63 3 16 3z"></path>
+    </svg>
+  </button>
+
+  <!-- 🧾 Chat Box -->
+  <div id="whatsapp-box" class="hidden mt-3 w-72 bg-white border border-blue-200 rounded-lg shadow-lg overflow-hidden">
+    <div class="bg-[#0a6bbf] text-white px-4 py-2 font-semibold">UDYOG PRABHA Support</div>
+    <div class="p-4 text-sm text-gray-700">
+      <p class="mb-3">👋 Hi there! Need help with GST, loans, or tax filing?</p>
+      <a href="https://wa.me/919876543210?text=Hello%20Udyog%20Prabha%20Team!%20I%20need%20assistance%20with..."
+         target="_blank"
+         class="block text-center bg-[#0076b8] hover:bg-[#005f99] text-white font-semibold py-2 rounded transition">
+        Start WhatsApp Chat
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- 💬 Toggle Script -->
+<script>
+  function toggleWhatsApp() {
+    const box = document.getElementById("whatsapp-box");
+    box.classList.toggle("hidden");
+  }
+</script>
+</body>
+</html>

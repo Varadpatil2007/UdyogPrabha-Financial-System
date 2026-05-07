@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Udyog Prabha Admin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="adminauth.js"></script>
+</head>
+<body class="bg-gray-100 h-screen flex items-center justify-center">
+  <!-- Login Panel -->
+  <div id="login-panel" class="w-full max-w-sm p-6 bg-white rounded shadow">
+    <h2 class="text-2xl font-bold mb-4 text-center">Udyog Prabha Admin Login</h2>
+    <input id="email" type="email" placeholder="Email" class="w-full p-2 border rounded mb-3" />
+    <input id="password" type="password" placeholder="Password" class="w-full p-2 border rounded mb-3" />
+    <button id="login-btn" class="w-full bg-blue-600 text-white p-2 rounded">Login</button>
+    <p id="error-msg" class="text-red-500 mt-2 text-sm text-center hidden">Invalid credentials.</p>
+  </div>
+
+  <!-- Dashboard -->
+  <div id="admin-panel" class="hidden w-full h-screen">
+    <div class="flex items-center justify-between bg-white p-4 shadow">
+      <h2 class="text-xl font-semibold">Udyog Prabha Admin Dashboard</h2>
+      <button id="logout-btn" class="bg-red-500 text-white px-4 py-2 rounded">Logout</button>
+    </div>
+    <div class="p-4">
+      <iframe src="https://docs.google.com/spreadsheets/d/1lkbErtHftW1P4rL3ojzHMuyMqAbc0PUompoDbC96IIU/edit?gid=523904319#gid=523904319"
+              class="w-full h-[80vh] border rounded"
+              frameborder="0"
+              allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

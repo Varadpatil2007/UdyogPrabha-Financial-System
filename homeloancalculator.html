@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Home Loan EMI Calculator - Calculate Monthly Payments Instantly | UdyogPrabha</title>
+<meta name="description" content="Use UdyogPrabha’s Home Loan EMI Calculator to quickly estimate your monthly EMI, total interest, and loan repayment amount. Plan your home loan smartly and efficiently.">
+<meta property="og:title" content="Home Loan EMI Calculator - UdyogPrabha">
+<meta property="og:description" content="Easily calculate your home loan EMI, interest, and repayment schedule using UdyogPrabha’s online home loan calculator.">
+<meta property="og:url" content="https://www.udyogprabha.com/tools/home-loan-calculator">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.udyogprabha.com/assets/home-loan-calculator-preview.jpg"> <!-- Replace with actual image URL -->
+
+
+  <script src="https://cdn.tailwindcss.com"></script>
+ <!-- Swiper CSS & JS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+  <style>
+    @keyframes marquee {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    .animate-marquee {
+      display: inline-block;
+      animation: marquee 20s linear infinite;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+ <!-- Top Strip (Hidden on small screens, shown on md and up) -->
+<div class="hidden md:flex bg-blue-900 text-white text-sm py-2 px-4 justify-between items-center">
+  <span>Ministry of MSME Supported | Call us: +91 9876543210</span>
+  <span>udyogprabha@email.com</span>
+</div>
+
+
+  <!-- Logo + Nav -->
+  <header class="bg-white shadow-md px-4 py-3 flex justify-between items-center">
+    <div class="flex items-center gap-3">
+      <img src="udyog.jpg" alt="Logo" class="h-12 w-12 object-cover rounded" />
+      <h1 class="text-xl font-bold text-blue-800">UDYOG PRABHA</h1>
+    </div>
+    <nav class="hidden md:flex gap-6 font-semibold text-sm text-gray-700">
+      <a href="index.html" class="hover:text-blue-600">Home</a>
+      <a href="about.html" class="hover:text-blue-600">About</a>
+      <a href="service.html" class="hover:text-blue-600">Services</a>
+      <a href="tools.html" class="hover:text-blue-600">Tools</a>
+      <a href="contact.html" class="hover:text-blue-600">Contact</a>
+      <a href="login.html" class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">Login</a>
+    </nav>
+<!-- Hamburger Button -->
+  
+  </header>
+
+  
+
+  <!-- Notice Bar with MENU -->
+  <div class="flex items-center bg-[#0a6bbf] text-white w-full shadow-md overflow-hidden relative">
+    <!-- Left Label -->
+    <div class="bg-[#23a5f2] px-6 py-3 relative flex items-center justify-center shrink-0">
+      <span class="relative z-10 font-semibold text-lg">Notice</span>
+      <div class="absolute top-0 right-0 w-0 h-0 border-t-[48px] border-t-transparent border-l-[25px] border-l-[#0a6bbf] border-b-[48px] border-b-transparent"></div>
+    </div>
+
+    <!-- Scrolling Text -->
+    <div class="flex-1 px-4 py-3 text-sm md:text-base italic whitespace-nowrap overflow-hidden">
+      <div class="animate-marquee inline-block">
+        CMEGP modified Guidelines implemented from 11-November • Subsidy revised • Digital verification mandatory •
+      </div>
+    </div>
+
+    <!-- MENU Button -->
+    <button onclick="toggleSidebar()" class="bg-white text-[#0a6bbf] font-semibold px-4 py-2 rounded shadow-md mr-4 flex items-center gap-2 hover:bg-gray-100 transition">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      MENU
+    </button>
+  </div>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="fixed top-0 right-0 h-full w-72 bg-white shadow-lg z-50 transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto">
+    <div class="p-4 border-b flex justify-between items-center sticky top-0 bg-white z-10">
+      <h2 class="text-lg font-bold text-blue-700">Quick Access</h2>
+      <button onclick="toggleSidebar()" class="text-gray-600 hover:text-red-500 text-2xl">&times;</button>
+    </div>
+    <ul class="divide-y divide-gray-200 text-sm font-medium">
+      <li><a href="index.html" class="block px-4 py-3 hover:bg-blue-50">Home</a></li>
+      <li><a href="about.html" class="block px-4 py-3 hover:bg-blue-50">About Us</a></li>
+      <li><a href="blog.html" class="block px-4 py-3 hover:bg-blue-50">Blog</a></li>
+      <li><a href="service.html" class="block px-4 py-3 hover:bg-blue-50">Service</a></li>
+      <li><a href="dashboard.html" class="block px-4 py-3 hover:bg-blue-50">Dashboard</a></li>
+      <li><a href="cmegpdash.html" class="block px-4 py-3 hover:bg-blue-50">CMEGP Dashboard</a></li>
+      <li><a href="videos.html" class="block px-4 py-3 hover:bg-blue-50">Video Tutorial</a></li>
+      <li><a href="ProjectReport (1).xls" download class="block px-4 py-3 hover:bg-blue-50">Sample Project Report</a></li>
+      <li><a href="faq.html" class="block px-4 py-3 hover:bg-blue-50">Frequently Asked Questions</a></li>
+      <li><a href="contacts.html" class="block px-4 py-3 hover:bg-blue-50">Contact List</a></li>
+      <li><a href="schemecircular.pdf" download class="block px-4 py-3 hover:bg-blue-50">Scheme Circular</a></li>
+      <li><a href="cmegpGuidelines.pdf" download="" class="block px-4 py-3 hover:bg-blue-50">Scheme Guidelines</a></li>
+      <li><a href="cmegpGR.pdf" download class="block px-4 py-3 hover:bg-blue-50">GR</a></li>
+      <li><a href="cmegp-UNDERTAKING (MAHARASHTRA).pdf" download class="block px-4 py-3 hover:bg-blue-50">Download CMEGP Undertaking form</a></li>
+    </ul>
+  </div>
+
+  <!-- Overlay -->
+  <div id="overlay" onclick="toggleSidebar()" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+
+<section class="max-w-5xl mx-auto bg-white rounded-lg shadow-md p-8 flex flex-col md:flex-row gap-8">
+  <!-- Left side: Inputs -->
+  <div class="flex-1 space-y-8">
+    <!-- Loan Amount -->
+    <div>
+      <button class="bg-blue-600 text-white px-4 py-1 rounded mb-2">Home Loan</button>
+      <label class="block font-semibold text-gray-700 mb-1">Loan Amount</label>
+      <p class="text-sm text-gray-500 mb-2">Minimum ₹10,00,000</p>
+      <input
+        id="loanAmount"
+        type="range"
+        min="1000000"
+        max="10000000"
+        step="50000"
+        value="5000000"
+        class="w-full"
+      />
+      <div id="loanAmountVal" class="font-bold text-xl mt-2">₹ 5,000,000</div>
+    </div>
+
+    <!-- Interest Rate -->
+    <div>
+      <label class="block font-semibold text-gray-700 mb-1">Interest Rate</label>
+      <p class="text-sm text-gray-500 mb-2">Minimum 7.99%</p>
+      <input
+        id="interestRate"
+        type="range"
+        min="7.99"
+        max="15"
+        step="0.01"
+        value="7.99"
+        class="w-full"
+      />
+      <div id="interestRateVal" class="font-bold text-xl mt-2">7.99%</div>
+    </div>
+
+    <!-- Tenure -->
+    <div>
+      <label class="block font-semibold text-gray-700 mb-1">Tenure (Years)</label>
+      <p class="text-sm text-gray-500 mb-2">Till July 2050</p>
+      <input
+        id="tenure"
+        type="range"
+        min="1"
+        max="30"
+        step="1"
+        value="25"
+        class="w-full"
+      />
+      <div id="tenureVal" class="font-bold text-xl mt-2">25 years</div>
+    </div>
+  </div>
+
+  <!-- Right side: Results & chart -->
+  <div class="flex-1 bg-blue-50 rounded-lg p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+  <!-- EMI & Apply -->
+<div class="text-center md:text-left flex-1">
+  <p class="text-gray-700 text-lg">Equated Monthly Instalments (EMI)</p>
+  <p id="emiVal" class="text-4xl font-extrabold mt-2 text-gray-900">38,557</p>
+  <br>
+  <a href="homeloan.html" class="mt-5 inline-block bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded transition duration-300">
+    Apply Now
+  </a>
+</div>
+
+
+    <!-- Chart and legend -->
+    <div class="flex items-center gap-6 flex-1 justify-center md:justify-end">
+      <svg
+        width="150"
+        height="150"
+        viewBox="0 0 36 36"
+        class="transform -rotate-90"
+        aria-hidden="true"
+      >
+        <circle
+          cx="18"
+          cy="18"
+          r="16"
+          fill="none"
+          stroke="#ddd"
+          stroke-width="8"
+        />
+        <circle
+          id="principalArc"
+          cx="18"
+          cy="18"
+          r="16"
+          fill="none"
+          stroke="#2563EB"
+          stroke-width="8"
+          stroke-dasharray="50 100"
+          stroke-linecap="round"
+          stroke-dashoffset="25"
+        />
+        <circle
+          id="interestArc"
+          cx="18"
+          cy="18"
+          r="16"
+          fill="none"
+          stroke="#C084FC"
+          stroke-width="8"
+          stroke-dasharray="50 100"
+          stroke-linecap="round"
+          stroke-dashoffset="75"
+        />
+      </svg>
+
+      <div class="text-left">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="w-4 h-4 rounded bg-blue-600 inline-block"></span>
+          <span class="font-semibold text-gray-700">Principal:</span>
+          <span id="principalVal" class="ml-2 font-bold text-gray-900">5,000,000</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-4 h-4 rounded bg-purple-400 inline-block"></span>
+          <span class="font-semibold text-gray-700">Interest Payable:</span>
+          <span id="interestVal" class="ml-2 font-bold text-gray-900">6,567,308</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const loanAmountInput = document.getElementById("loanAmount");
+  const interestRateInput = document.getElementById("interestRate");
+  const tenureInput = document.getElementById("tenure");
+
+  const loanAmountVal = document.getElementById("loanAmountVal");
+  const interestRateVal = document.getElementById("interestRateVal");
+  const tenureVal = document.getElementById("tenureVal");
+
+  const emiVal = document.getElementById("emiVal");
+  const principalVal = document.getElementById("principalVal");
+  const interestVal = document.getElementById("interestVal");
+
+  const principalArc = document.getElementById("principalArc");
+  const interestArc = document.getElementById("interestArc");
+
+  function calculateEMI(P, r, n) {
+    if (r === 0) return P / n;
+    return (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+  }
+
+  function updateValues() {
+    const P = parseInt(loanAmountInput.value, 10);
+    const annualRate = parseFloat(interestRateInput.value);
+    const years = parseInt(tenureInput.value, 10);
+
+    loanAmountVal.textContent = `₹ ${P.toLocaleString()}`;
+    interestRateVal.textContent = `${annualRate.toFixed(2)}%`;
+    tenureVal.textContent = `${years} years`;
+
+    const monthlyRate = annualRate / 100 / 12;
+    const months = years * 12;
+
+    const emi = calculateEMI(P, monthlyRate, months);
+    emiVal.textContent = Math.round(emi).toLocaleString();
+
+    const totalPayment = emi * months;
+    const interestPayable = totalPayment - P;
+
+    principalVal.textContent = P.toLocaleString();
+    interestVal.textContent = Math.round(interestPayable).toLocaleString();
+
+    const principalPercent = (P / totalPayment) * 100;
+    const interestPercent = 100 - principalPercent;
+
+    principalArc.setAttribute("stroke-dasharray", `${principalPercent} ${interestPercent}`);
+    interestArc.setAttribute("stroke-dasharray", `${interestPercent} ${principalPercent}`);
+
+    principalArc.setAttribute("stroke-dashoffset", 25);
+    interestArc.setAttribute("stroke-dashoffset", 25 - principalPercent);
+  }
+
+  loanAmountInput.addEventListener("input", updateValues);
+  interestRateInput.addEventListener("input", updateValues);
+  tenureInput.addEventListener("input", updateValues);
+
+  document.getElementById("applyBtn").addEventListener("click", () => {
+    alert("Redirecting to loan application...");
+  });
+
+  updateValues();
+</script>
+<br>
+<section class="bg-white py-12 px-4 md:px-10 text-gray-800">
+  <div class="max-w-6xl mx-auto space-y-10">
+
+    <!-- Title -->
+    <div class="text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-red-700 mb-4">Home Loan Calculator - Calculate Your Monthly EMI Online</h2>
+      <p class="text-lg md:text-xl text-gray-700">Plan your dream home with accurate EMI estimates using our easy-to-use calculator.</p>
+    </div>
+
+    <!-- Intro -->
+    <div class="space-y-4">
+      <p>
+        A Home Loan EMI Calculator is an online tool that helps you calculate the Equated Monthly Instalment (EMI) for your home loan. You can quickly determine the EMI based on loan amount, interest rate, and tenure. With attractive interest rates and EMIs starting at Rs. 785/Lakh*, it's easier than ever to make informed decisions.
+      </p>
+      <p>
+        Apply for a home loan confidently with UdyogPrabha and take a smart step toward owning your dream home.
+      </p>
+    </div>
+
+    <!-- What is EMI -->
+    <div>
+      <h3 class="text-2xl font-semibold text-blue-900 mb-3">What is Home Loan EMI?</h3>
+      <p>EMI (Equated Monthly Instalment) is the fixed monthly payment made by a borrower to repay the principal and interest of the loan over a selected tenure.</p>
+    </div>
+
+    <!-- EMI Formula -->
+    <div>
+      <h3 class="text-2xl font-semibold text-blue-900 mb-3">How is EMI on Home Loan Calculated?</h3>
+      <p>
+        The formula to calculate EMI is:<br />
+        <code class="bg-gray-100 px-2 py-1 rounded inline-block mt-2 text-sm font-mono">EMI = [P × R × (1+R)<sup>N</sup>] / [(1+R)<sup>N</sup> – 1]</code>
+      </p>
+      <p class="mt-2">Where:</p>
+      <ul class="list-disc ml-6 text-sm space-y-1">
+        <li><strong>P</strong> = Principal amount</li>
+        <li><strong>R</strong> = Monthly interest rate</li>
+        <li><strong>N</strong> = Number of EMIs (months)</li>
+      </ul>
+      <p class="mt-4">Example: A ₹50,00,000 loan at 8.2% for 20 years will have an EMI of ₹37,426.</p>
+    </div>
+
+    <!-- Why Use Calculator -->
+    <div>
+      <h3 class="text-2xl font-semibold text-blue-900 mb-3">Why Use a Home Loan EMI Calculator?</h3>
+      <ul class="list-disc ml-6 space-y-2">
+        <li>Quick and accurate calculations</li>
+        <li>Compare different loan options</li>
+        <li>Better monthly budget planning</li>
+        <li>Improves financial decision-making</li>
+      </ul>
+    </div>
+
+    <!-- Features -->
+    <div>
+      <h3 class="text-2xl font-semibold text-blue-900 mb-3">Features & Benefits</h3>
+      <ul class="list-disc ml-6 space-y-2">
+        <li>Instant EMI and interest breakdown</li>
+        <li>Compare tenure and interest rate options</li>
+        <li>Easy to use with minimal inputs</li>
+        <li>Ideal for new purchases, resale, construction, or renovation loans</li>
+      </ul>
+    </div>
+
+    <!-- How to Use -->
+    <div>
+      <h3 class="text-2xl font-semibold text-blue-900 mb-3">How to Use the Home Loan EMI Calculator?</h3>
+      <ol class="list-decimal ml-6 space-y-2">
+        <li>Enter the loan amount</li>
+        <li>Select tenure (up to 25 years)</li>
+        <li>Input interest rate</li>
+        <li>Get EMI and amortisation schedule instantly</li>
+      </ol>
+    </div>
+
+    <!-- Amortisation Info -->
+    <div>
+      <h3 class="text-2xl font-semibold text-blue-900 mb-3">Home Loan Amortisation Schedule</h3>
+      <p>The amortisation table breaks down each payment by principal and interest while showing the remaining balance after every EMI. You can also download it for record-keeping and planning.</p>
+    </div>
+
+    <!-- Tips to Reduce EMI -->
+    <div>
+      <h3 class="text-2xl font-semibold text-blue-900 mb-3">How to Reduce Your EMI?</h3>
+      <ul class="list-disc ml-6 space-y-2">
+        <li>Opt for a higher down payment</li>
+        <li>Choose a longer repayment tenure</li>
+        <li>Transfer your balance to a lower-interest loan</li>
+      </ul>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-10">
+      <a href="homeloan.html" class="inline-block bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded transition duration-300">
+        Apply for a Home Loan
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<br>
+<section class="max-w-7xl mx-auto px-4 py-12">
+  <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">Home Loan Calculator – Frequently Asked Questions</h2>
+  
+  <div class="space-y-6 text-gray-700">
+
+    <div>
+      <h3 class="font-semibold text-lg">1. What is a home loan calculator?</h3>
+      <p>A home loan calculator is an online tool that helps you estimate your EMI (Equated Monthly Installment), total interest payable, and overall cost of the loan based on the loan amount, interest rate, and tenure.</p>
+    </div>
+
+    <div>
+      <h3 class="font-semibold text-lg">2. How does a home loan EMI calculator work?</h3>
+      <p>The calculator uses the EMI formula: <code>EMI = [P × r × (1 + r)^n] / [(1 + r)^n – 1]</code>, where P = loan amount, r = monthly interest rate, and n = tenure in months.</p>
+    </div>
+
+    <div>
+      <h3 class="font-semibold text-lg">3. Why should I use a home loan calculator?</h3>
+      <p>It gives you a clear understanding of your monthly payments, helping you plan finances, compare lenders, and select a suitable loan amount and tenure.</p>
+    </div>
+
+    <div>
+      <h3 class="font-semibold text-lg">4. Is the home loan calculator result accurate?</h3>
+      <p>The results are based on standard formulas and are accurate for estimation. However, the final EMI may vary slightly based on lender-specific charges and repayment methods.</p>
+    </div>
+
+    <div>
+      <h3 class="font-semibold text-lg">5. Can I change the loan amount and tenure while using the calculator?</h3>
+      <p>Yes, the calculator is interactive. You can input or adjust the loan amount, interest rate, and tenure to instantly view updated EMI values.</p>
+    </div>
+
+    <div>
+      <h3 class="font-semibold text-lg">6. What interest rate should I enter?</h3>
+      <p>Use the current interest rate offered by your bank or lender. You can also test different rates to understand how it impacts your EMI.</p>
+    </div>
+
+    <div>
+      <h3 class="font-semibold text-lg">7. Can I use the calculator for different types of loans?</h3>
+      <p>Yes, this calculator can also be used for other loans like personal, car, or business loans, provided you have the right interest rate and tenure.</p>
+    </div>
+
+    <div>
+      <h3 class="font-semibold text-lg">8. Will the EMI remain the same throughout the loan?</h3>
+      <p>For fixed-rate loans, EMI remains the same. For floating-rate loans, the EMI may vary based on interest rate changes over time.</p>
+    </div>
+
+    <div>
+      <h3 class="font-semibold text-lg">9. Does the calculator include processing fees and other charges?</h3>
+      <p>No, this tool only calculates EMI based on the principal, rate, and tenure. Extra charges like processing fees, GST, or penalties are not included.</p>
+    </div>
+
+    <div>
+      <h3 class="font-semibold text-lg">10. Can the calculator help in loan comparison?</h3>
+      <p>Yes. You can compare multiple loan scenarios by adjusting values to find the most affordable or fastest repayment option for your home loan.</p>
+    </div>
+
+  </div>
+</section>
+
+   <!-- Footer -->
+  <footer class="bg-blue-900 text-white text-sm py-4 text-center">
+    &copy; 2025 UDYOG PRABHA. All Rights Reserved.
+  </footer>
+
+  <!-- Sidebar Toggle Script -->
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('translate-x-full');
+      document.getElementById('overlay').classList.toggle('hidden');
+    }
+  </script>
+
+<!-- Popup Banner Overlay with Image -->
+<div id="popupBanner" class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50">
+  <div class="bg-white rounded-lg shadow-lg max-w-md w-full p-4 text-center relative">
+    
+    <!-- ❌ Close Button -->
+    <button onclick="closePopup()" class="absolute top-2 right-3 text-gray-500 hover:text-red-600 text-2xl">&times;</button>
+
+    <!-- 📸 Banner Image -->
+    <img src="pmegpbanner.jpg" alt="CIBIL Score Coming Soon"
+         class="w-full h-40 object-cover rounded-md mb-4" />
+
+    <!-- 📝 Text Content -->
+    <h2 class="text-xl font-bold text-blue-800 mb-2">🚀 New Service Alert!</h2>
+    <p class="text-gray-700 mb-4">We are launching our Live CIBIL Score Checker on UDYOG PRABHA. Be the first to try it!</p>
+
+    <!-- 🔗 CTA Button -->
+    <a href="cibil.html"
+       class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded shadow inline-block">
+      Learn More
+    </a>
+  </div>
+</div>
+
+<!-- 📜 Script to Close Popup -->
+<script>
+  function closePopup() {
+    document.getElementById("popupBanner").style.display = "none";
+  }
+
+  // Optional: Auto-close after 10s
+  // setTimeout(() => { closePopup(); }, 10000);
+</script>
+<!-- 📜 Smart Popup Control Script -->
+<script>
+  const popupKey = "udyogPrabhaPopupShown";
+  const today = new Date().toDateString();
+
+  if (sessionStorage.getItem(popupKey) !== today) {
+    document.getElementById("popupBanner").style.display = "flex";
+    sessionStorage.setItem(popupKey, today);
+  } else {
+    document.getElementById("popupBanner").style.display = "none";
+  }
+
+  function closePopup() {
+    document.getElementById("popupBanner").style.display = "none";
+  }
+</script>
+
+<!-- ✅ Theme-Matching WhatsApp Floating Chat Widget -->
+<div id="whatsapp-chat" class="fixed bottom-5 right-5 z-50">
+
+  <!-- 💬 Toggle Button -->
+  <button onclick="toggleWhatsApp()" 
+    class="bg-[#0076b8] hover:bg-[#005f99] text-white rounded-full p-4 shadow-lg focus:outline-none transition">
+    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 32 32">
+      <path d="M19.11 17.52c-.29-.14-1.7-.84-1.96-.94-.26-.1-.45-.14-.64.15s-.73.93-.9 1.12c-.16.18-.33.2-.62.07-.29-.14-1.22-.45-2.32-1.43-.86-.76-1.44-1.69-1.6-1.98s-.02-.44.12-.58c.13-.13.29-.33.44-.5.14-.17.18-.29.26-.48.09-.18.04-.36-.02-.5-.07-.14-.64-1.55-.88-2.13-.23-.56-.47-.48-.64-.49h-.55c-.18 0-.48.07-.73.36-.26.29-1 1-1 2.44s1.02 2.83 1.17 3.03c.14.2 2 3.06 4.85 4.29 2.85 1.23 2.85.82 3.36.77.5-.05 1.7-.7 1.94-1.38.24-.68.24-1.26.17-1.38-.07-.11-.26-.18-.55-.32zM16 3C9.37 3 4 8.37 4 15c0 2.63.85 5.05 2.28 7.02L4 29l7.26-2.28C13.01 28.15 14.47 28.5 16 28.5c6.63 0 12-5.37 12-12S22.63 3 16 3z"></path>
+    </svg>
+  </button>
+
+  <!-- 🧾 Chat Box -->
+  <div id="whatsapp-box" class="hidden mt-3 w-72 bg-white border border-blue-200 rounded-lg shadow-lg overflow-hidden">
+    <div class="bg-[#0a6bbf] text-white px-4 py-2 font-semibold">UDYOG PRABHA Support</div>
+    <div class="p-4 text-sm text-gray-700">
+      <p class="mb-3">👋 Hi there! Need help with GST, loans, or tax filing?</p>
+      <a href="https://wa.me/919876543210?text=Hello%20Udyog%20Prabha%20Team!%20I%20need%20assistance%20with..."
+         target="_blank"
+         class="block text-center bg-[#0076b8] hover:bg-[#005f99] text-white font-semibold py-2 rounded transition">
+        Start WhatsApp Chat
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<!-- 💬 Toggle Script -->
+<script>
+  function toggleWhatsApp() {
+    const box = document.getElementById("whatsapp-box");
+    box.classList.toggle("hidden");
+  }
+</script>
+
+<script>
+  const swiper = new Swiper(".mySwiper", {
+    loop: true,
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    }
+  });
+</script>
+</body>
+</html>

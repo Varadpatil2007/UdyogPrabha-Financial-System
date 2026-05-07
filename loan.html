@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UDYOG PRABHA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes marquee {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    .animate-marquee {
+      display: inline-block;
+      animation: marquee 20s linear infinite;
+    }
+    .fade-in {
+      animation: fadeIn 1s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-white shadow-md px-4 py-3 flex justify-between items-center">
+    <div class="flex items-center gap-3">
+      <img src="udyog.jpg" alt="Logo" class="h-12 w-12 object-cover rounded" />
+      <h1 class="text-xl font-bold text-blue-800">UDYOG PRABHA</h1>
+    </div>
+    <nav class="hidden md:flex gap-6 font-semibold text-sm text-gray-700">
+      <a href="index.html" class="hover:text-blue-600">Home</a>
+      <a href="about.html" class="hover:text-blue-600">About</a>
+      <a href="service.html" class="hover:text-blue-600">Services</a>
+      <a href="blog.html" class="hover:text-blue-600">Blog</a>
+      <a href="contact.html" class="hover:text-blue-600">Contact</a>
+      <a href="login.html" class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">Login</a>
+    </nav>
+  </header>
+
+  <!-- Notice Bar -->
+  <div class="flex items-center bg-[#0a6bbf] text-white w-full shadow-md overflow-hidden relative">
+    <div class="bg-[#23a5f2] px-6 py-3 relative flex items-center justify-center shrink-0">
+      <span class="relative z-10 font-semibold text-lg">Notice</span>
+      <div class="absolute top-0 right-0 w-0 h-0 border-t-[48px] border-t-transparent border-l-[25px] border-l-[#0a6bbf] border-b-[48px] border-b-transparent"></div>
+    </div>
+    <div class="flex-1 px-4 py-3 text-sm md:text-base italic whitespace-nowrap overflow-hidden">
+      <div class="animate-marquee inline-block">
+        CMEGP modified Guidelines implemented from 11-November • Subsidy revised • Digital verification mandatory •
+      </div>
+    </div>
+    <button onclick="toggleSidebar()" class="bg-white text-[#0a6bbf] font-semibold px-4 py-2 rounded shadow-md mr-4 flex items-center gap-2 hover:bg-gray-100 transition">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      MENU
+    </button>
+  </div>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="fixed top-0 right-0 h-full w-72 bg-white shadow-lg z-50 transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto">
+    <div class="p-4 border-b flex justify-between items-center sticky top-0 bg-white z-10">
+      <h2 class="text-lg font-bold text-blue-700">Quick Access</h2>
+      <button onclick="toggleSidebar()" class="text-gray-600 hover:text-red-500 text-2xl">&times;</button>
+    </div>
+    <ul class="divide-y divide-gray-200 text-sm font-medium">
+      <li><a href="dashboard.html" class="block px-4 py-3 hover:bg-blue-50">Dashboard</a></li>
+      <li><a href="cmegpdash.html" class="block px-4 py-3 hover:bg-blue-50">CMEGP Dashboard</a></li>
+      <li><a href="videos.html" class="block px-4 py-3 hover:bg-blue-50">Video Tutorial</a></li>
+      <li><a href="ProjectReport (1).xls" download class="block px-4 py-3 hover:bg-blue-50">Sample Project Report</a></li>
+      <li><a href="faq.html" class="block px-4 py-3 hover:bg-blue-50">Frequently Asked Questions</a></li>
+      <li><a href="contacts.html" class="block px-4 py-3 hover:bg-blue-50">Contact List</a></li>
+      <li><a href="schemecircular.pdf" download class="block px-4 py-3 hover:bg-blue-50">Scheme Circular</a></li>
+      <li><a href="cmegpGuidelines.pdf" download class="block px-4 py-3 hover:bg-blue-50">Scheme Guidelines</a></li>
+      <li><a href="cmegpGR.pdf" download class="block px-4 py-3 hover:bg-blue-50">GR</a></li>
+      <li><a href="cmegp-UNDERTAKING (MAHARASHTRA).pdf" download class="block px-4 py-3 hover:bg-blue-50">Download CMEGP Undertaking form</a></li>
+    </ul>
+  </div>
+  <div id="overlay" onclick="toggleSidebar()" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+
+  <!-- Hero -->
+  <section class="bg-white py-10 px-6 md:px-16 fade-in">
+    <h1 class="text-3xl md:text-4xl font-bold text-center text-blue-900 mb-6">Loan Services</h1>
+    <p class="text-center max-w-3xl mx-auto text-lg text-gray-700">
+      We help you get quick and easy access to various types of loans with minimal documentation and professional guidance. Whether it's a business loan or a personal loan — we've got your back.
+    </p>
+  </section>
+
+  <!-- Loan Types -->
+  <section class="py-10 px-6 md:px-16 bg-gray-50 fade-in">
+    <h2 class="text-2xl font-semibold text-blue-800 mb-4">Types of Loans We Offer:</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- Loan cards -->
+      <div class="bg-white p-5 rounded-xl shadow hover:shadow-xl transition">
+        <h3 class="text-xl font-bold text-blue-700">Business Loan</h3>
+        <p class="mt-2 text-gray-600">For entrepreneurs and MSMEs with tailored options including collateral-free finance up to ₹50 Lakhs.</p>
+      </div>
+      <div class="bg-white p-5 rounded-xl shadow hover:shadow-xl transition">
+        <h3 class="text-xl font-bold text-blue-700">Home Loan</h3>
+        <p class="mt-2 text-gray-600">Affordable interest rates for your dream home. We help with bank selection and documentation.</p>
+      </div>
+      <div class="bg-white p-5 rounded-xl shadow hover:shadow-xl transition">
+        <h3 class="text-xl font-bold text-blue-700">Personal Loan</h3>
+        <p class="mt-2 text-gray-600">Meet your urgent personal needs with fast disbursement and flexible repayment plans.</p>
+      </div>
+      <div class="bg-white p-5 rounded-xl shadow hover:shadow-xl transition">
+        <h3 class="text-xl font-bold text-blue-700">Subsidy Support</h3>
+        <p class="mt-2 text-gray-600">Assistance for PMEGP, Mudra Loan, and state government subsidy schemes with proper documentation.</p>
+      </div>
+      <div class="bg-white p-5 rounded-xl shadow hover:shadow-xl transition">
+        <h3 class="text-xl font-bold text-blue-700">Term Loan</h3>
+        <p class="mt-2 text-gray-600">Fixed term financing for expansion, machinery, or setup with government tie-ups.</p>
+      </div>
+      <div class="bg-white p-5 rounded-xl shadow hover:shadow-xl transition">
+        <h3 class="text-xl font-bold text-blue-700">Cash Credit</h3>
+        <p class="mt-2 text-gray-600">Get working capital loans against inventory or receivables with quick approvals.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inquiry Form -->
+  <section class="py-12 px-6 md:px-16 bg-white fade-in">
+    <h2 class="text-2xl font-bold text-center text-blue-900 mb-6">Apply for a Loan</h2>
+    <form id="loanForm" onsubmit="submitForm(event)" class="max-w-3xl mx-auto bg-gray-100 p-6 rounded-xl shadow space-y-4">
+      <input type="text" name="name" placeholder="Full Name" required class="w-full px-4 py-2 border rounded-lg" />
+      <input type="tel" name="phone" placeholder="Phone Number" required class="w-full px-4 py-2 border rounded-lg" />
+      <input type="email" name="email" placeholder="Email Address" required class="w-full px-4 py-2 border rounded-lg" />
+      <select name="loanType" required class="w-full px-4 py-2 border rounded-lg">
+        <option value="">Select Loan Type</option>
+        <option value="Business Loan">Business Loan</option>
+        <option value="Home Loan">Home Loan</option>
+        <option value="Personal Loan">Personal Loan</option>
+        <option value="Subsidy">Subsidy Support</option>
+        <option value="Term Loan">Term Loan</option>
+        <option value="Cash Credit">Cash Credit</option>
+      </select>
+      <textarea name="message" placeholder="Additional Message" class="w-full px-4 py-2 border rounded-lg" rows="4"></textarea>
+      <button type="submit" class="bg-blue-800 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+        Submit Inquiry
+      </button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white text-center p-4 mt-10">
+    &copy; 2025 Udyog Prabha. All rights reserved.
+  </footer>
+
+  <script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbxqh2aiFDIOJbv7dY1gDgArMxC5hURslcMiSp2oi9I61T7e0LpbxofLWGTU6bLrBpcV/exec';
+
+  function submitForm(e) {
+    e.preventDefault();
+    const form = document.getElementById('loanForm');
+
+    const data = {
+      name: form.name.value,
+      phone: form.phone.value,
+      email: form.email.value,
+      loanType: form.loanType.value,
+      message: form.message.value
+    };
+
+    fetch(scriptURL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+    .then(response => response.text())
+    .then(result => {
+      if (result.includes("Success")) {
+        alert("✅ Inquiry submitted successfully!");
+        form.reset();
+      } else {
+        alert("❌ Google Sheet Error: " + result);
+      }
+    })
+    .catch(error => {
+      console.error('Fetch error:', error);
+      alert("❌ Submission failed. Check console.");
+    });
+  }
+</script>
+
+</body>
+</html>

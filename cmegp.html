@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CMEGP Application - Udyog Prabha</title>
+  <link rel="stylesheet" href="cmegp.css">
+  <!-- Animate on Scroll -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+</head>
+<body>
+
+    <!-- Header -->
+  <header class="header">
+    <img src="udyog.jpg" alt="UDYOG PRABHA Logo" class="logo" />
+    <div class="nav-toggle" id="navToggle">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <nav class="nav" id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="service.html">Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="testimonial.html">Testimonials</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html">Client Login</a>
+    </nav>
+  </header>
+
+  
+  <!-- Hero -->
+  <section class="hero" data-aos="fade-up">
+    <h1>CMEGP Loan Application</h1>
+    <p>Get up to ₹50 Lakhs subsidy for your business under the Government CMEGP scheme. Apply now through Udyog Prabha!</p>
+    <a href="#apply" class="btn">Apply Now</a>
+  </section>
+
+  <!-- Benefits -->
+  <section class="benefits" data-aos="fade-up">
+    <h2>Why Apply CMEGP through Us?</h2>
+    <div class="grid">
+      <div class="card">✅ Expert Guidance</div>
+      <div class="card">✅ Fast Processing</div>
+      <div class="card">✅ Up to 35% Subsidy</div>
+      <div class="card">✅ Support for Docs</div>
+    </div>
+  </section>
+
+  <!-- Steps -->
+  <section class="steps" data-aos="fade-up">
+    <h2>How to Apply?</h2>
+    <ol>
+      <li>Fill the application form below</li>
+      <li>Upload required documents</li>
+      <li>Our expert will call you within 24 hrs</li>
+      <li>Loan application submitted to bank</li>
+    </ol>
+  </section>
+
+  <!-- Application Form -->
+  <section id="apply" class="form-section" data-aos="fade-up">
+    <h2>Apply for CMEGP Loan</h2>
+    <form id="cmegpForm">
+      <input type="text" placeholder="Full Name" required>
+      <input type="tel" placeholder="Mobile Number" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="text" placeholder="City" required>
+      <input type="number" placeholder="Loan Amount Needed (₹)" required>
+      <label>Upload Aadhar Card (PDF/Image)</label>
+      <input type="file" accept=".pdf,.jpg,.png" required>
+      <label>Upload PAN Card (PDF/Image)</label>
+      <input type="file" accept=".pdf,.jpg,.png" required>
+      <button type="submit" class="btn">Submit Application</button>
+    </form>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta" data-aos="fade-up">
+    <h2>Need Help?</h2>
+    <p>Chat with our team on WhatsApp or call directly for instant support.</p>
+    <a href="https://wa.me/91XXXXXXXXXX" class="btn green">Chat on WhatsApp</a>
+    <a href="tel:91XXXXXXXXXX" class="btn">Call Now</a>
+  </section>
+
+  <!-- AOS Script -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    document.getElementById('cmegpForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      alert("Your CMEGP application has been submitted successfully!");
+      this.reset();
+    });
+  </script>
+</body>
+</html>

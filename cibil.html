@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Coming Soon - CIBIL Score Check</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+<body class="relative text-white min-h-screen flex items-center justify-center overflow-hidden">
+
+  <!-- 🔹 Background Video -->
+  <video autoplay muted loop class="absolute w-full h-full object-cover z-[-1]">
+    <source src="universe.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- 🔹 Overlay -->
+  <div class="absolute inset-0 bg-black bg-opacity-60 z-0"></div>
+
+  <!-- 🔹 Main Content -->
+  <div class="z-10 text-center px-6">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4 animate-pulse">🚧 Coming Soon</h1>
+    <p class="text-lg md:text-xl mb-6 max-w-xl mx-auto">We're launching the <strong>Live CIBIL Score Check</strong> system soon.<br>Stay tuned and get notified!</p>
+
+    <!-- 🔹 Countdown Timer -->
+    <div id="countdown" class="flex justify-center gap-4 text-center mb-6 text-xl sm:text-2xl font-semibold">
+      <div><span id="days">00</span><div class="text-sm">Days</div></div>
+      <div><span id="hours">00</span><div class="text-sm">Hours</div></div>
+      <div><span id="minutes">00</span><div class="text-sm">Minutes</div></div>
+      <div><span id="seconds">00</span><div class="text-sm">Seconds</div></div>
+    </div>
+
+    <!-- 🔹 Social Links -->
+    <div class="flex justify-center space-x-6 text-cyan-400 text-lg">
+      <a href="https://www.instagram.com/udyogprabha" target="_blank" class="hover:text-white transition">Instagram</a>
+      <a href="mailto:info@udyogprabha.com" class="hover:text-white transition">Email</a>
+    </div>
+
+    <footer class="mt-6 text-sm text-gray-300">© 2025 Udyog Prabha. All rights reserved.</footer>
+  </div>
+
+  <!-- 🔹 Countdown Script -->
+  <script>
+    // Set target launch date (update below)
+    const launchDate = new Date("August 15, 2025 00:00:00").getTime();
+
+    const timer = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+
+      if (distance < 0) {
+        clearInterval(timer);
+        document.getElementById("countdown").innerHTML = "🎉 We're Live!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").textContent = String(days).padStart(2, '0');
+      document.getElementById("hours").textContent = String(hours).padStart(2, '0');
+      document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
+      document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
+    }, 1000);
+  </script>
+</body>
+</html>

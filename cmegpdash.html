@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CMEGP Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes marquee {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    .animate-marquee {
+      display: inline-block;
+      animation: marquee 20s linear infinite;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 font-sans">
+     <!-- Logo + Nav -->
+  <header class="bg-white shadow-md px-4 py-3 flex justify-between items-center">
+    <div class="flex items-center gap-3">
+      <img src="udyog.jpg" alt="Logo" class="h-12 w-12 object-cover rounded" />
+      <h1 class="text-xl font-bold text-blue-800">UDYOG PRABHA</h1>
+    </div>
+    <nav class="hidden md:flex gap-6 font-semibold text-sm text-gray-700">
+      <a href="index.html" class="hover:text-blue-600">Home</a>
+      <a href="about.html" class="hover:text-blue-600">About</a>
+      <a href="service.html" class="hover:text-blue-600">Services</a>
+      <a href="blog.html" class="hover:text-blue-600">Blog</a>
+      <a href="contact.html" class="hover:text-blue-600">Contact</a>
+      <a href="login.html" class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">Login</a>
+    </nav>
+  </header>
+
+  <!-- Notice Bar with MENU -->
+  <div class="flex items-center bg-[#0a6bbf] text-white w-full shadow-md overflow-hidden relative">
+    <!-- Left Label -->
+    <div class="bg-[#23a5f2] px-6 py-3 relative flex items-center justify-center shrink-0">
+      <span class="relative z-10 font-semibold text-lg">Notice</span>
+      <div class="absolute top-0 right-0 w-0 h-0 border-t-[48px] border-t-transparent border-l-[25px] border-l-[#0a6bbf] border-b-[48px] border-b-transparent"></div>
+    </div>
+
+    <!-- Scrolling Text -->
+    <div class="flex-1 px-4 py-3 text-sm md:text-base italic whitespace-nowrap overflow-hidden">
+      <div class="animate-marquee inline-block">
+        CMEGP modified Guidelines implemented from 11-November • Subsidy revised • Digital verification mandatory •
+      </div>
+    </div>
+
+    <!-- MENU Button -->
+    <button onclick="toggleSidebar()" class="bg-white text-[#0a6bbf] font-semibold px-4 py-2 rounded shadow-md mr-4 flex items-center gap-2 hover:bg-gray-100 transition">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      MENU
+    </button>
+  </div>
+
+  <!-- Sidebar -->
+  <div id="sidebar" class="fixed top-0 right-0 h-full w-72 bg-white shadow-lg z-50 transform translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto">
+    <div class="p-4 border-b flex justify-between items-center sticky top-0 bg-white z-10">
+      <h2 class="text-lg font-bold text-blue-700">Quick Access</h2>
+      <button onclick="toggleSidebar()" class="text-gray-600 hover:text-red-500 text-2xl">&times;</button>
+    </div>
+    <ul class="divide-y divide-gray-200 text-sm font-medium">
+      <li><a href="dashboard.html" class="block px-4 py-3 hover:bg-blue-50">Dashboard</a></li>
+      <li><a href="videos.html" class="block px-4 py-3 hover:bg-blue-50">Video Tutorial</a></li>
+      <li><a href="ProjectReport (1).xls" class="block px-4 py-3 hover:bg-blue-50">Sample Project Report</a></li>
+      <li><a href="faq.html" class="block px-4 py-3 hover:bg-blue-50">Frequently Asked Questions</a></li>
+      <li><a href="contacts.html" class="block px-4 py-3 hover:bg-blue-50">Contact List</a></li>
+      <li><a href="schemecircular.pdf" download="" class="block px-4 py-3 hover:bg-blue-50">Scheme Circular</a></li>
+      <li><a href="cmegpGuidelines.pdf" download class="block px-4 py-3 hover:bg-blue-50">Scheme Guidelines</a></li>
+      <li><a href="gr.html" download class="block px-4 py-3 hover:bg-blue-50">GR</a></li>
+    </ul>
+  </div>
+
+  <!-- Overlay -->
+  <div id="overlay" onclick="toggleSidebar()" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+
+  <header class="bg-blue-700 text-white p-6 text-center text-2xl font-bold">
+    CMEGP Dashboard
+  </header>
+
+  <section class="grid md:grid-cols-3 gap-6 p-6">
+    <!-- Gender Box -->
+    <div class="bg-gray-800 text-white rounded shadow">
+      <div class="p-4 text-xl font-bold border-b border-gray-700">Gender</div>
+      <div class="p-4 flex flex-col gap-2">
+        <div class="flex justify-between font-semibold"><span>Male</span><span>188656</span></div>
+        <div class="flex justify-between font-semibold"><span>Female</span><span>199929</span></div>
+        <div class="flex justify-between font-semibold"><span>Trans Gender</span><span>0</span></div>
+      </div>
+    </div>
+
+    <!-- Online Submitted -->
+    <div class="bg-cyan-600 text-white rounded shadow">
+      <div class="p-4 text-xl font-bold border-b border-cyan-700">Online Submitted</div>
+      <div class="p-4 flex flex-col gap-2">
+        <div class="flex justify-between font-semibold"><span>Approved</span><span>351782</span></div>
+        <div class="flex justify-between font-semibold"><span>Rejected</span><span>36803</span></div>
+        <div class="flex justify-between font-semibold"><span>Total</span><span>388585</span></div>
+      </div>
+    </div>
+
+    <!-- DLFTC -->
+    <div class="bg-red-500 text-white rounded shadow">
+      <div class="p-4 text-xl font-bold border-b border-red-700">DLTFC</div>
+      <div class="p-4 flex flex-col gap-2">
+        <div class="flex justify-between font-semibold"><span>Approved</span><span>311775</span></div>
+        <div class="flex justify-between font-semibold"><span>Rejected</span><span>2586</span></div>
+        <div class="flex justify-between font-semibold"><span>Total</span><span>314361</span></div>
+      </div>
+    </div>
+
+    <!-- Social Category -->
+    <div class="bg-blue-600 text-white rounded shadow">
+      <div class="p-4 text-xl font-bold border-b border-blue-800">Social Category</div>
+      <div class="p-4 flex flex-col gap-2">
+        <div class="flex justify-between font-semibold"><span>Schedule Caste</span><span>89970</span></div>
+        <div class="flex justify-between font-semibold"><span>Schedule Tribe</span><span>20305</span></div>
+        <div class="flex justify-between font-semibold"><span>General</span><span>278310</span></div>
+      </div>
+    </div>
+
+    <!-- Special Category -->
+    <div class="bg-yellow-400 text-white rounded shadow">
+      <div class="p-4 text-xl font-bold border-b border-yellow-600">Special Category</div>
+      <div class="p-4 flex flex-col gap-2">
+        <div class="flex justify-between font-semibold"><span>Ex-Service Man</span><span>524</span></div>
+        <div class="flex justify-between font-semibold"><span>Physically Challenged</span><span>3898</span></div>
+        <div class="flex justify-between font-semibold"><span>Not Applicable</span><span>384044</span></div>
+      </div>
+    </div>
+
+    <!-- Bank Summary -->
+    <div class="bg-green-600 text-white rounded shadow">
+      <div class="p-4 text-xl font-bold border-b border-green-800">Bank</div>
+      <div class="p-4 flex flex-col gap-2">
+        <div class="flex justify-between font-semibold"><span>Approved</span><span>65974</span></div>
+        <div class="flex justify-between font-semibold"><span>Rejected</span><span>192615</span></div>
+        <div class="flex justify-between font-semibold"><span>Total</span><span>258589</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bar Chart -->
+  <section class="p-6">
+    <div class="bg-white p-6 rounded shadow max-w-4xl mx-auto">
+      <h2 class="text-xl font-bold mb-4 text-blue-700">CMEGP Performance (Status Wise)</h2>
+      <canvas id="statusChart" height="100"></canvas>
+    </div>
+  </section>
+
+  <script>
+    const ctx = document.getElementById('statusChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Submitted', 'Loan Sanctioned', 'Rejected By Bank', 'Pending with Bank'],
+        datasets: [{
+          label: 'Applications',
+          data: [430, 95, 360, 195],
+          backgroundColor: '#3B82F6'
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+
+   <!-- Sidebar Toggle Script -->
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('translate-x-full');
+      document.getElementById('overlay').classList.toggle('hidden');
+    }
+  </script>
+</body>
+</html>

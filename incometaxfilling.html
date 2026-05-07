@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Income Tax Filing | UDYOG PRABHA</title>
+  <link rel="stylesheet" href="incometaxfilling.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-flex">
+      <h1>UDYOG PRABHA</h1>
+      <nav>
+        <a href="/">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h2>Income Tax Filing</h2>
+    <p>
+      Hassle-free and accurate Income Tax Filing services by expert CAs. Whether you're a salaried individual, freelancer, or business owner — we handle your tax filings with complete compliance and maximum benefits.
+    </p>
+
+    <!-- Highlights -->
+    <div class="info-cards">
+      <div class="card">
+        <h4>Expert CA Review</h4>
+        <p>Filed by qualified professionals.</p>
+      </div>
+      <div class="card">
+        <h4>Fast & Secure</h4>
+        <p>Quick turnaround with full data privacy.</p>
+      </div>
+      <div class="card">
+        <h4>Affordable Pricing</h4>
+        <p>Plans starting at ₹499/- only.</p>
+      </div>
+    </div>
+
+    <!-- Form -->
+    <h3>Request Income Tax Filing</h3>
+    <form id="taxForm">
+      <label>Full Name</label>
+      <input type="text" placeholder="Enter your full name" required />
+
+      <label>Email Address</label>
+      <input type="email" placeholder="Enter your email" required />
+
+      <label>Phone Number</label>
+      <input type="tel" placeholder="Enter your contact number" required />
+
+      <label>PAN Number</label>
+      <input type="text" placeholder="ABCDE1234F" required />
+
+      <label>Employment Type</label>
+      <select required>
+        <option value="" disabled selected>Select one</option>
+        <option>Salaried</option>
+        <option>Self-Employed</option>
+        <option>Freelancer</option>
+        <option>Business Owner</option>
+        <option>Other</option>
+      </select>
+
+      <label>Upload Form 16 or Document</label>
+      <input type="file" accept=".pdf,.jpg,.jpeg,.png,.zip" required />
+
+      <label>Additional Notes (Optional)</label>
+      <textarea rows="4" placeholder="Anything specific you want to mention..."></textarea>
+
+      <button type="submit">Submit Request</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 UDYOG PRABHA. All rights reserved.
+  </footer>
+
+  <script src="incometaxfilling.js"></script>
+</body>
+</html>

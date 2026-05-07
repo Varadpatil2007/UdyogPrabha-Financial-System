@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home Loan Application | UDYOG PRABHA</title>
+  <link rel="stylesheet" href="homeloaninfo.css">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <img src="udyog.jpg" alt="UDYOG PRABHA Logo" class="logo" />
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="service.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" data-aos="fade-up">
+    <h1>Home Loan Application</h1>
+    <p>Apply for a home loan with UDYOG PRABHA and secure the future of your dreams.</p>
+  </section>
+
+  <section class="form-section" data-aos="fade-left">
+    <h2>Required Documents</h2>
+    <p>Make sure to upload the following documents for your home loan application:</p>
+    <ul>
+      <li>PAN & Aadhaar Card</li>
+      <li>ITR for the last 3 years</li>
+      <li>Bank Statement (6 months)</li>
+      <li>Business Registration (Shop Act / Udyam Aadhar)</li>
+      <li>GST Certificate</li>
+      <li>Rental Agreement or Property Card</li>
+      <li>Electricity Bill / 7/12 Utara</li>
+      <li>Detailed Project Report</li>
+    </ul>
+  </section>
+
+  <section class="form-section" data-aos="fade-right">
+    <h2>Upload Documents</h2>
+    <form id="loanForm">
+      <div class="form-group">
+        <label for="pan">PAN Card</label>
+        <input type="file" id="pan" name="pan" accept=".jpg, .jpeg, .png" required />
+        <progress id="panProgress" value="0" max="100"></progress>
+      </div>
+
+      <div class="form-group">
+        <label for="aadhaar">Aadhaar Card</label>
+        <input type="file" id="aadhaar" name="aadhaar" accept=".jpg, .jpeg, .png" required />
+        <progress id="aadhaarProgress" value="0" max="100"></progress>
+      </div>
+
+      <div class="form-group">
+        <label for="itr">ITR for the last 3 years</label>
+        <input type="file" id="itr" name="itr" accept=".pdf, .jpg, .jpeg, .png" required />
+        <progress id="itrProgress" value="0" max="100"></progress>
+      </div>
+
+      <div class="form-group">
+        <label for="salary">Salary Slip or Form 16</label>
+        <input type="file" id="salary" name="salary" accept=".pdf, .jpg, .jpeg, .png" required />
+        <progress id="salaryProgress" value="0" max="100"></progress>
+      </div>
+
+      <div class="form-group">
+        <label for="registration">Business Registration (Shop Act / Udyam Aadhar)</label>
+        <input type="file" id="registration" name="registration" accept=".pdf, .jpg, .jpeg, .png" required />
+        <progress id="registrationProgress" value="0" max="100"></progress>
+      </div>
+
+      <div class="form-group">
+        <label for="bank">Bank Statement (6 months)</label>
+        <input type="file" id="bank" name="bank" accept=".pdf, .jpg, .jpeg, .png" required />
+        <progress id="bankProgress" value="0" max="100"></progress>
+      </div>
+
+      <div class="form-group">
+        <label for="permission">Construction Permission</label>
+        <input type="file" id="permission" name="permission" accept=".pdf, .jpg, .jpeg, .png" required />
+        <progress id="permissionProgress" value="0" max="100"></progress>
+      </div>
+
+      <div class="form-group">
+        <label for="propertycard">Property Card</label>
+        <input type="file" id="propertycard" name="propertycard" accept=".pdf, .jpg, .jpeg, .png" required />
+        <progress id="propertycardProgress" value="0" max="100"></progress>
+      </div>
+
+      <div class="form-group">
+        <label for="estimate">Estimate / Plan / Layout</label>
+        <input type="file" id="estimate" name="estimate" accept=".pdf, .jpg, .jpeg, .png" required />
+        <progress id="estimateProgress" value="0" max="100"></progress>
+      </div>
+
+      <div class="form-group">
+        <label for="propertydoc">Property Buying Documents</label>
+        <input type="file" id="propertydoc" name="propertydoc" accept=".pdf, .jpg, .jpeg, .png" required />
+        <progress id="propertydocProgress" value="0" max="100"></progress>
+      </div>
+
+      <div class="form-group">
+        <label for="rera">RERA Certificate</label>
+        <input type="file" id="rera" name="rera" accept=".pdf, .jpg, .jpeg, .png" required />
+        <progress id="reraProgress" value="0" max="100"></progress>
+      </div>
+
+      <button type="submit">Submit Application</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 UDYOG PRABHA. All Rights Reserved.</p>
+  </footer>
+
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-storage.js"></script>
+  <script src="homeloaninfo.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

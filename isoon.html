@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Coming Soon - UDYOG PRABHA</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    video::-webkit-media-controls { display: none !important; }
+  </style>
+</head>
+<body class="relative text-white min-h-screen flex items-center justify-center">
+
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-[-1]">
+    <source src="universe.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Overlay Content -->
+  <div class="bg-black bg-opacity-60 p-6 rounded-lg text-center max-w-xl mx-auto">
+    <img src="udyog.jpg" alt="Logo" class="h-16 w-16 mx-auto rounded-full mb-4">
+    <h1 class="text-3xl font-bold mb-2">Coming Soon</h1>
+    <p class="mb-6">We're launching something exciting. Stay tuned!</p>
+
+    <!-- Countdown -->
+    <div id="countdown" class="flex justify-center gap-6 mb-6 text-center">
+      <div><div id="days" class="text-3xl font-bold">00</div><div class="text-xs">Days</div></div>
+      <div><div id="hours" class="text-3xl font-bold">00</div><div class="text-xs">Hours</div></div>
+      <div><div id="minutes" class="text-3xl font-bold">00</div><div class="text-xs">Minutes</div></div>
+      <div><div id="seconds" class="text-3xl font-bold">00</div><div class="text-xs">Seconds</div></div>
+    </div>
+
+    
+
+    <p class="text-xs mt-6 text-gray-300">&copy; 2025 UDYOG PRABHA</p>
+  </div>
+
+  <!-- Countdown Script -->
+  <script>
+    const launchDate = new Date("2025-07-05T00:00:00").getTime();
+    const countdown = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+
+      if (distance <= 0) {
+        clearInterval(countdown);
+        window.location.href = "index.html"; // redirect on end
+        return;
+      }
+
+      document.getElementById("days").textContent = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
+      document.getElementById("hours").textContent = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+      document.getElementById("minutes").textContent = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+      document.getElementById("seconds").textContent = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
+    }, 1000);
+  </script>
+
+</body>
+</html>
